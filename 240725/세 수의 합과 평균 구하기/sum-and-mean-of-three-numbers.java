@@ -9,6 +9,6 @@ public class Main {
         int b = Integer.parseInt(st.nextToken());
         int c = Integer.parseInt(st.nextToken());
 
-        System.out.printf("%d\n%.0f", (a + b + c), (double)(a + b + c) / 3);
+        System.out.printf("%d\n%d", (a + b + c), (a + b + c) / 3);
     }
 }
