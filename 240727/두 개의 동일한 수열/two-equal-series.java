@@ -9,6 +9,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         int[] aArr = new int[n];
         int[] bArr = new int[n];
+        boolean flag = true;
 
          st = new StringTokenizer(br.readLine());
          for (int i = 0; i < n; i++) {
@@ -27,9 +28,10 @@ public class Main {
             if (aArr[i] == bArr[i]) continue;
             else {
                 System.out.print("No");
+                flag = false;
                 break;
             }
          }
-         System.out.print("Yes");
+         if (flag ==true) System.out.print("Yes");
     }
 }
