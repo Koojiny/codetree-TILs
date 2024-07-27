@@ -32,6 +32,6 @@ public class Main {
                 break;
             }
          }
-         if (flag ==true) System.out.print("Yes");
+         if (flag == true) System.out.print("Yes");
     }
 }
