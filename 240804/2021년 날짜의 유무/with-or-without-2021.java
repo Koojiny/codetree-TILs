@@ -15,7 +15,7 @@ public class Main {
 
     public static boolean checkDay(int M, int D) {
         if (1 <= M && M <= 12) {
-            if (M == 1 || M == 3 || M == 5 || M == 7 || M == 9 || M == 11){
+            if (M == 1 || M == 3 || M == 5 || M == 7 || M == 8 || M == 10){
                 if (1 <= D && D <= 31) return true;
                 else return false;
             }
@@ -28,7 +28,7 @@ public class Main {
                 else return false;
             }
         }
-        
+
         return false;
     }
 }
