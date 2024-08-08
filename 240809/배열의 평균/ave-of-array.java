@@ -27,8 +27,8 @@ public class Main {
         }
         c1 = c1 / 8;
 
-        System.out.println(a1 + " " + a2);
-        System.out.println(b1 + " " + b2 + " " + b3 + " " + b4);
-        System.out.println(c1);
+        System.out.printf("%.1f %.1f\n", a1, a2);
+        System.out.printf("%.1f %.1f %.1f %.1f\n", b1, b2, b3, b4);
+        System.out.printf("%.1f", c1);
     }
 }
