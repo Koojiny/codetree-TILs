@@ -6,26 +6,41 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         
-        Id id1 = new Id();
-        Level level1 = new Level();
-        System.out.printf("user %s lv %d\n", id1.id, level1.level);
-        
-        id1.id = st.nextToken();
-        level1.level = Integer.parseInt(st.nextToken());
+        // 초기값을 이용하여 첫 번째 User 객체를 생성
+        User user1 = new User();
 
-        System.out.printf("user %s lv %d", id1.id, level1.level);
+        // 값 변경
+        user1.id = "codetree";
+        user1.level = 10;
+        
+        // 변수 선언 및 입력
+        String id2 = st.nextToken();
+        int level2 = Integer.parseInt(st.nextToken());
+        
+        // 초기값을 이용하여 두 번째 User 객체 생성
+        User user2 = new User();
+
+        // 값 변경
+        user2.id = id2;
+        user2.level = level2;
+
+        System.out.printf("user %s lv %d\n", user1.id, user1.level);
+        System.out.printf("user %s lv %d", user2.id, user2.level);
     }
 }
 
-class Id {
+class User {
     String id;
+    int level;
 
-    public Id() {
-        this.id = "codetree";
+    public User(){
+        this.id = "";
+        this.level = 0;
     }
 
-    public Id(String id) {
+    public User(String id, int level){
         this.id = id;
+        this.level = level;
     }
 }
 
