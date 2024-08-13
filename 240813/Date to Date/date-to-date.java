@@ -10,24 +10,19 @@ public class Main {
         int m2 = Integer.parseInt(st.nextToken());
         int d2 = Integer.parseInt(st.nextToken());
         
-        int month = m1, day = d1;
-        int elapsedDays = 1;
+        System.out.print(numOfDays(m2, d2) - numOfDays(m1, d1) + 1);
+    }
 
-        //                                1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12.
-        int[] numOfDays = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        while(true) {
-            if(month == m2 && day == d2)
-                break;
-        
-            elapsedDays++;
-            day++;
-        
-            if(day > numOfDays[month]) {
-                month++;
-                day = 1;
-            }
+    public static int numOfDays(int m, int d) {
+        int[] days = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int totalDays = 0;
+
+        for (int i = 1; i < m; i++) {
+            totalDays += days[i];
         }
-        
-        System.out.print(elapsedDays);
+
+        totalDays += d;
+
+        return totalDays;
     }
 }
