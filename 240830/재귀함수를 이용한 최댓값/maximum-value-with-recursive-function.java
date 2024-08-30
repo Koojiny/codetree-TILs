@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static int maxN = 0;
+    static int maxN;
     static int n;
     static StringTokenizer st;
     
@@ -10,8 +10,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
-        
-        System.out.print(maxNum(maxN, Integer.parseInt(st.nextToken()), 1));
+        maxN = Integer.parseInt(st.nextToken());
+        System.out.print(maxNum(maxN, maxN, 1));
     }
 
     public static int maxNum(int maxNum, int tmpNum, int depth) {
