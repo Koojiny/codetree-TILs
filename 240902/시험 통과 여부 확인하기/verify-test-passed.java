@@ -6,6 +6,6 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         if (n >= 80) System.out.print("pass");
-        else System.out.print((80 - n) + "more score");
+        else System.out.print((80 - n) + " more score");
     }
 }
