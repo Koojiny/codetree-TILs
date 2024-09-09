@@ -12,9 +12,10 @@ public class Main {
         int dayTime = (a - 11) * 24 * 60;
         int hourTime = (b - 11) * 60;
         int minTime = c;
-
         int tmpMin = 11;
+        int totalMin = dayTime + hourTime + minTime - tmpMin;
 
-        System.out.print(dayTime + hourTime + minTime - tmpMin);
+        if (totalMin >= 0) System.out.print(dayTime + hourTime + minTime - tmpMin);
+        else System.out.print(-1);
     }
 }
