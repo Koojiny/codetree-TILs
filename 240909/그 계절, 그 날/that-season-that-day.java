@@ -9,7 +9,7 @@ public class Main {
         int m = Integer.parseInt(st.nextToken());
         int d = Integer.parseInt(st.nextToken());
 
-        System.out.print(checkSeason(checkDate(y, m, d)));
+        System.out.println(checkSeason(checkDate(y, m, d)));
     }
 
     public static int checkDate(int year, int month, int day) {
@@ -22,6 +22,10 @@ public class Main {
                 } else {
                     return month;
                 }
+            } else {
+                if (days[month - 1] < day) {
+                    return -1;
+                } else return month;
             }
         }
         else {
@@ -29,7 +33,6 @@ public class Main {
                 return -1;
             } else return month;
         }
-        return -1;
     }
 
     public static String checkSeason(int n) {
