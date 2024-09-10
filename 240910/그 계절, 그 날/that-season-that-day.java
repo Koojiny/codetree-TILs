@@ -16,7 +16,7 @@ public class Main {
     public static int checkDate(int year, int month, int day) {
         int[] days = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         // 1. 윤년 체크
-        System.out.println(lunarCheck(year));
+        //System.out.println(lunarCheck(year));
         if (lunarCheck(year)) {
             if (month == 2) {
                 if (day > 29) {
