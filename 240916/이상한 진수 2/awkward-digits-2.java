@@ -13,7 +13,7 @@ public class Main {
             temp[i] = N.charAt(i) + "";
         }
         
-        for (int i = 1; i < N.length(); i++) {
+        for (int i = 0; i < N.length(); i++) {
             temp[i] = temp[i] == "0" ? "1" : "0";
             String tempStr = "";
             
