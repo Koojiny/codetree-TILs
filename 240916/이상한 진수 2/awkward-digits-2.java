@@ -14,12 +14,13 @@ public class Main {
         }
         
         for (int i = 0; i < N.length(); i++) {
-            temp[i] = temp[i] == "0" ? "1" : "0";
+            temp[i] = temp[i].equals("0") ? "1" : "0";
             String tempStr = "";
-            
+            // System.out.println(Arrays.toString(temp));
             for (int j = 0; j < N.length(); j++) {
                 tempStr += temp[j];
             }
+            // System.out.println(tempStr);
             int binaryToDecimal = Integer.parseInt(tempStr, 2);
             answer = Math.max(answer, binaryToDecimal);
             temp[i] = arr[i];
