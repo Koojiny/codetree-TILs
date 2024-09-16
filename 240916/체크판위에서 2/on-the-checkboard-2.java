@@ -13,7 +13,7 @@ public class Main {
         graph = new String[R][C];
         for (int i = 0; i < R; i++) {
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < R; j++) {
+            for (int j = 0; j < C; j++) {
                 graph[i][j] = st.nextToken();
             }
         }
