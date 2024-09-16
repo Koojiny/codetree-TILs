@@ -16,16 +16,15 @@ public class Main {
         }
 
         int answer = Integer.MAX_VALUE;
-        // 체크포인트 순환
+        // 체크포인트 순환 : i번째 체크포인트를 건너뛰기
         for (int i = 1; i < n - 1; i++) {
             int distant = 0;
+            int prev = 0;
             for (int j = 1; j < n; j++) {
                 //System.out.println("i = "+ i + ", j = " + j);
                 if (j == i) continue;
-                int tmpDis = Math.abs(arr[i - 1][0] - arr[i][0]) + Math.abs(arr[i - 1][1] - arr[i][1]);
-                //System.out.println("tmpDis = " + tmpDis);
-                distant += tmpDis;
-                
+                distant += Math.abs(arr[prev][0] - arr[j][0]) + Math.abs(arr[prev][1] - arr[j][1]);
+                prev = j;
             }
             answer = Math.min(answer, distant);
             //System.out.println("answer = " + answer);
