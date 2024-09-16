@@ -34,6 +34,5 @@ public class Main {
         // 2. 순환하며 해당 숫자를 0 또는 1로 변경
         // 3. 10진법으로 숫자를 변환
         System.out.print(max);
-        System.out.print(Integer.toBinaryString(5));
     }
 }
