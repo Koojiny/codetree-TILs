@@ -1,41 +1,36 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class Main {
-    static int N;
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-        N = Integer.parseInt(br.readLine());
-        List<int[]> checkPoints = new ArrayList<>();
-        for (int i = 0; i < N; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int[] cp = new int[2];
-            cp[0] = Integer.parseInt(st.nextToken());
-            cp[1] = Integer.parseInt(st.nextToken());
-            checkPoints.add(cp);
+        StringTokenizer st;
+        int n = Integer.parseInt(br.readLine());
+        int[][] arr = new int[n][2];
+
+        // 체크포인트 입력받기
+        for (int i = 0; i < n; i++) {
+            st= new StringTokenizer(br.readLine());
+            arr[i][0] = Integer.parseInt(st.nextToken());
+            arr[i][1] = Integer.parseInt(st.nextToken());
         }
-        
+
         int answer = Integer.MAX_VALUE;
-        
-        for (int i = 1; i < checkPoints.size() - 1; i++) {
-            int sum = 0;
-            int prev = 0;
-            for (int j = 1; j < checkPoints.size(); j++) {
-                if (i == j) continue;
-                int x1 = checkPoints.get(prev)[0];
-                int y1 = checkPoints.get(prev)[1];
-                int x2 = checkPoints.get(j)[0];
-                int y2 = checkPoints.get(j)[1];
+        // 체크포인트 순환
+        for (int i = 1; i < n - 1; i++) {
+            int distant = 0;
+            for (int j = 1; j < n; j++) {
+                //System.out.println("i = "+ i + ", j = " + j);
+                if (j == i) continue;
+                int tmpDis = Math.abs(arr[i - 1][0] - arr[i][0]) + Math.abs(arr[i - 1][1] - arr[i][1]);
+                //System.out.println("tmpDis = " + tmpDis);
+                distant += tmpDis;
                 
-                sum += Math.abs(x1 - x2) + Math.abs(y1 - y2);
-                prev = j;
             }
-            
-            answer = Math.min(answer, sum);
-            // temp += Math.abs(x1 - x2) + Math.abs(y1 - y2);
-        }      
-        
-        System.out.println(answer);
+            answer = Math.min(answer, distant);
+            //System.out.println("answer = " + answer);
+        }
+
+        System.out.print(answer);
     }
 }
