@@ -14,7 +14,7 @@ public class Main {
         }
 
         for (int i = 0; i < N.length(); i++) {
-            temp[i] = "1";
+            temp[i] = temp[i] == "0" ? "1" : "0";
             String tempStr = temp[i];
             
             for (int j = 0; j < N.length(); j++) {
