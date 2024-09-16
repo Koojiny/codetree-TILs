@@ -8,7 +8,7 @@ public class Main {
         int max = Integer.MIN_VALUE;
         
         // 1. 2진법 수를 2번째 숫자부터 순환 (맨 앞은 0이 아님을 가정하므로)
-        for (int i = 1; i < num.length; i++) {
+        for (int i = 0; i < num.length; i++) {
             if (num[i] == '1') {
                 num[i] = '0';
 
