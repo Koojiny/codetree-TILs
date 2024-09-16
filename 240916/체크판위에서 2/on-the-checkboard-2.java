@@ -18,12 +18,15 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < R - 1; i++) {
-            for (int j = 0; j < C - 1; j++) {
+        for (int i = 1; i < R - 1; i++) {
+            int temp = 0;
+            for (int j = 1; j < C - 1; j++) {
+                if (temp > 2) continue;
                 if (graph[i][j].equals(graph[i + 1][j + 1])) continue;
                 answer++;
+                temp++;
             }
         }
-        System.out.println(answer - 1);
+        System.out.println(answer);
     }
 }
