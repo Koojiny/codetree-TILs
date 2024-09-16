@@ -12,20 +12,18 @@ public class Main {
             arr[i] = N.charAt(i) + "";
             temp[i] = N.charAt(i) + "";
         }
-
-        for (int i = 0; i < N.length(); i++) {
+        
+        for (int i = 1; i < N.length(); i++) {
             temp[i] = temp[i] == "0" ? "1" : "0";
-            String tempStr = temp[i];
+            String tempStr = "";
             
             for (int j = 0; j < N.length(); j++) {
-                if (i == j) continue;
                 tempStr += temp[j];
             }
             int binaryToDecimal = Integer.parseInt(tempStr, 2);
             answer = Math.max(answer, binaryToDecimal);
             temp[i] = arr[i];
         }
-    
         
         System.out.println(answer);
     }
