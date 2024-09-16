@@ -1,31 +1,39 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int answer = 0;
-        String N = br.readLine();
-        String[] arr = new String[N.length()];
-        String[] temp = new String[N.length()];
-        for (int i = 0; i < N.length(); i++) {
-            arr[i] = N.charAt(i) + "";
-            temp[i] = N.charAt(i) + "";
-        }
+        char[] num = br.readLine().toCharArray();
+        int max = Integer.MIN_VALUE;
         
-        for (int i = 0; i < N.length(); i++) {
-            temp[i] = temp[i].equals("0") ? "1" : "0";
-            String tempStr = "";
-            // System.out.println(Arrays.toString(temp));
-            for (int j = 0; j < N.length(); j++) {
-                tempStr += temp[j];
+        // 1. 2진법 수를 2번째 숫자부터 순환 (맨 앞은 0이 아님을 가정하므로)
+        for (int i = 0; i < num.length; i++) {
+            if (num[i] == '1') {
+                num[i] = '0';
+
+                String s = "";
+                for (int j = 0; j < num.length; j++) {
+                    s += num[j];
+                }
+                int tmp = Integer.parseInt(s, 2); // 10진법 변환
+                max = Math.max(max, tmp);
+                num[i] = '1';
+            } else {
+                num[i] = '1';
+
+                String s = "";
+                for (int j = 0; j < num.length; j++) {
+                    s += num[j];
+                }
+                int tmp = Integer.parseInt(s, 2); // 10진법 변환
+                max = Math.max(max, tmp);
+                num[i] = '0';
             }
-            // System.out.println(tempStr);
-            int binaryToDecimal = Integer.parseInt(tempStr, 2);
-            answer = Math.max(answer, binaryToDecimal);
-            temp[i] = arr[i];
         }
-        
-        System.out.println(answer);
+        // 2. 순환하며 해당 숫자를 0 또는 1로 변경
+        // 3. 10진법으로 숫자를 변환
+        System.out.print(max);
+        System.out.print(Integer.toBinaryString(5));
     }
 }
