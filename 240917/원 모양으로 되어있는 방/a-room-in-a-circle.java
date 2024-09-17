@@ -1,31 +1,32 @@
 import java.io.*;
 import java.util.*;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
+    static int N;
+    public static void main(String[] args) throws Exception {
+        // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        int[] arr = new int[n + 1];
+        N = Integer.parseInt(br.readLine());
+        int[] people = new int[N * 2];
 
-        for (int i = 1; i <= n; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
+        for (int i = 0; i < N; i++) {
+            people[i] = Integer.parseInt(br.readLine());
+        }
+        for (int i = N; i < people.length; i++) {
+            people[i] = people[i % N];
         }
 
-        //System.out.println(Arrays.toString(arr));
-
-        int minDis = Integer.MAX_VALUE;
-        for (int i = 1; i <= n; i++) {
-            int tmpDis = 0;
-            for (int j = 1; j <= n; j++) {
-                if (j - i < 0) {
-                    tmpDis += (j - i + n) * arr[j];
-                } else {
-                    tmpDis += (j - i) * arr[j];
-                }
+        int answer = Integer.MAX_VALUE;
+        
+        for (int start = 0; start < N; start++) {
+            int sum = 0;
+            int cnt = 1;
+            for (int j = start + 1; j < people.length; j++) {
+                if (cnt == N) break;
+                sum += people[j - 1] * (j - start);
+                cnt++;
             }
-
-            minDis = Math.min(minDis, tmpDis);
+            answer = Math.min(sum, answer);
         }
-        System.out.println(minDis);
+        System.out.println(answer);
     }
 }
