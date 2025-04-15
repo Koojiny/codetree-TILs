@@ -15,9 +15,7 @@ public class Main {
     public static int minN(int a, int b, int c) {
         int min = a;
         if (min > b) min = b;
-        else if (min > c) {
-            min = c;
-        }
+        if (min > c) min = c;
 
         return min;
     }
