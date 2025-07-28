@@ -13,13 +13,11 @@ public class Main {
         }
     }
 
-    public static boolean checkAlphabet(String s) {
-        boolean flag = false;
-        
+    public static boolean checkAlphabet(String s) {        
         for (int i = 0; i < s.length() - 1; i++) {
-            if (s.charAt(i) != s.charAt(i + 1)) flag = true;
+            if (s.charAt(i) != s.charAt(i + 1)) return true;
         }
 
-        return flag;
+        return false;
     }
 }
