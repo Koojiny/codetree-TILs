@@ -17,9 +17,8 @@ public class Main {
 
     public static boolean isExist(int m, int d) {
         int[] days = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        int nDay = days[m];
+        if (m < 1 || m > 12) return false;
 
-        if (nDay >= d) return true;
-        else return false;
+        return d >= 1 && d <= days[m];
     }
 }
