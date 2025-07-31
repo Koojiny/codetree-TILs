@@ -10,20 +10,15 @@ public class Main {
         String t = st.nextToken();
 
         String[] sArr = new String[n];
-        int idx = 0;
-        int xCnt = 0;
+        int cnt = 0;
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
             if (s.startsWith(t)) {
-                sArr[idx] = s;
-            } else {
-                sArr[idx] = "";
-                xCnt++;
+                sArr[cnt++] = s;
             }
-            idx++;
         }
-        Arrays.sort(sArr);        
+        Arrays.sort(sArr, 0, cnt);        
 
-        System.out.print(sArr[xCnt + k - 1]);
+        System.out.print(sArr[k - 1]);
     }
 }
