@@ -16,16 +16,16 @@ public class Main {
             String location = st.nextToken();
 
             names[i] = name;
-            infos = new Info(name, addr, location);
+            infos[i] = new Info(name, addr, location);
         }
 
         Arrays.sort(names);
         
         for (int i = 0; i < n; i++) {
             if (names[n - 1].equals(infos[i].name)) {
-                System.out.println(infos[i].);
-                System.out.println(infos[i].);
-                System.out.println(infos[i].);
+                System.out.println("name " + infos[i].name);
+                System.out.println("addr " + infos[i].address);
+                System.out.println("city " + infos[i].location);
             }
         }
     }
