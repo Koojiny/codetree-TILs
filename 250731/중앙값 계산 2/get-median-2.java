@@ -12,7 +12,8 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
             if (i % 2 == 0) {
-                Arrays.sort(arr, 0, i);
+                Arrays.sort(arr, 0, i + 1);
+                // System.out.println("idx= " + i + ", " + Arrays.toString(arr));
                 System.out.print(arr[i / 2] + " ");
             }
         }
