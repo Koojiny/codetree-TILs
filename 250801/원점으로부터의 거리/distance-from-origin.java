@@ -39,6 +39,7 @@ class Spot implements Comparable<Spot> {
 
     @Override
     public int compareTo(Spot other) {
-        return this.dist - other.dist;
+        if (this.dist != other.dist) return this.dist - other.dist;
+        return this.num - other.num;
     }
 }
