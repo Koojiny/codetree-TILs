@@ -24,8 +24,7 @@ public class Main {
 
         int[] answer = new int[n];
         for (int i = 0; i < n; i++) {
-            int originIdx = nums[i].idx;
-            answer[originIdx] = i + 1;
+            answer[nums[i].idx] = i + 1;
         }
 
         for (int a : answer) {
