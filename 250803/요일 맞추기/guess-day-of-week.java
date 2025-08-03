@@ -10,11 +10,14 @@ public class Main {
         int m2 = Integer.parseInt(st.nextToken());
         int d2 = Integer.parseInt(st.nextToken());
 
-        String[] day = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-        int idx = 1;
-        int diff = calcDay(m2, d2) - calcDay(m1, d1);
+        String[] day = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
         
-        System.out.println(day[(1 + diff) % 7]);
+        int diff = calcDay(m2, d2) - calcDay(m1, d1);
+        while (diff < 0) {
+            diff += 7;
+        }
+        
+        System.out.println(day[diff % 7]);
     }
 
     public static int calcDay(int m, int d) {
