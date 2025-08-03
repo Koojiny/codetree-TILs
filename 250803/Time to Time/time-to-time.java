@@ -10,7 +10,8 @@ public class Main {
         int h2 = Integer.parseInt(st.nextToken());
         int m2 = Integer.parseInt(st.nextToken());
 
-        System.out.println(calcTime(h1, m1, h2, m2));
+        // System.out.println(calcTime(h1, m1, h2, m2));
+        System.out.println(calcTime2(h2, m2) - calcTime2(h1, m1));
     }
 
     public static int calcTime(int h1, int m1, int h2, int m2) {
@@ -31,5 +32,10 @@ public class Main {
         }
 
         return time;
+    }
+
+    public static int calcTime2(int h, int m) {
+        
+        return h * 60 + m;
     }
 }
