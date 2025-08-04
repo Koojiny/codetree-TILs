@@ -9,8 +9,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         int n = Integer.parseInt(br.readLine());
-        line = new int[1001];
-        curIdx = 501;
+        line = new int[2001];
+        curIdx = 1001;
         
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
