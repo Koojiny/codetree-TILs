@@ -17,8 +17,8 @@ public class Main {
         // 1. n 장의 색종이만큼 평면에 칠하기
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
+            int x = Integer.parseInt(st.nextToken()) + offset;
+            int y = Integer.parseInt(st.nextToken()) + offset;
 
             for (int j = x; j < x + size; j++) {
                 for (int k = y; k < y + size; k++) {
