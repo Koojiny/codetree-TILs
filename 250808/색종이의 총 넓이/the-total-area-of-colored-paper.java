@@ -10,7 +10,9 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         int size = 8;
         int offset = 100;
-        board = new int[offset * 2 + 1][offset * 2 + 1];
+        int len = offset * 2 + 1;
+        
+        board = new int[len][len];
 
         // 1. n 장의 색종이만큼 평면에 칠하기
         for (int i = 0; i < n; i++) {
@@ -25,9 +27,10 @@ public class Main {
             }
         }
 
+        // 2. 칠해진 부분 합산
         int area = 0;
-        for (int j = 0; j < offset * 2 + 1; j++) {
-            for (int k = 0; k < offset * 2 + 1; k++) {
+        for (int j = 0; j < len; j++) {
+            for (int k = 0; k < len; k++) {
                 if (board[j][k] == 1) area++;
             }
         }
