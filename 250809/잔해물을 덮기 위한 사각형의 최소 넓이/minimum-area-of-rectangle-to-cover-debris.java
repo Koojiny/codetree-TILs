@@ -47,6 +47,8 @@ public class Main {
             }
         }
 
+        if (minx == Integer.MAX_VALUE) return 0;
+
         System.out.println((maxX - minX + 1) * (maxY - minY + 1));
     }
 }
