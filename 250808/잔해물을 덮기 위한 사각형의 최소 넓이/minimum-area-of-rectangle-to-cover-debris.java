@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-        OFFSET = 10;
+        OFFSET = 1000;
         board = new int[OFFSET * 2 + 1][OFFSET * 2 + 1];
 
         for (int i = 0; i < 2; i++) {
@@ -27,6 +27,12 @@ public class Main {
 
         int maxGaro = 0;
         int maxSero = 0;
+        // for (int j = 0; j < OFFSET * 2 + 1; j++) {
+        //     for (int k = 0; k < OFFSET * 2 + 1; k++) {
+        //         System.out.print(board[j][k] + " ");
+        //     }
+        //     System.out.println();
+        // }
 
         // 가로 최대 길이
         for (int j = 0; j < OFFSET * 2 + 1; j++) {
