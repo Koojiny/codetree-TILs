@@ -14,14 +14,13 @@ public class Main {
         int max = 0;
         for (int i = 0; i < n; i++) {
             int now = Integer.parseInt(st.nextToken());
-            if (i >= 1 && now > T) {
+            if (now > T) {
                 cnt++;
             } else {
-                if (now > T) cnt = 1;
-                else cnt = 0;
+                cnt = 0;
             }
 
-            if (cnt > max) max = cnt;
+            max = Math.max(cnt, max);
         }
 
         System.out.print(max);
