@@ -14,9 +14,10 @@ public class Main {
         int max = 1;
         int cnt = 1;
         for (int i = 1; i < n; i++) {
-            if (arr[i] == arr[i - 1]) cnt++;
-            else {
+            if (arr[i] == arr[i - 1]) {
+                cnt++;
                 if (cnt > max) max = cnt;
+            } else {
                 cnt = 1;
             }
         }
