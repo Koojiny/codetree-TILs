@@ -11,7 +11,7 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        int max = Integer.MIN_VALUE;
+        int max = 1;
         int cnt = 1;
         for (int i = 1; i < n; i++) {
             if (arr[i] == arr[i - 1]) cnt++;
