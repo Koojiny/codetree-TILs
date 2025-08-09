@@ -11,14 +11,12 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        boolean flag;
-        if (arr[0] > 0) flag = true;
-        else flag = false;
+        boolean flag = arr[0] > 0;
 
         int cnt = 1;
         int max = 1;
         for (int i = 1; i < n; i++) {
-            boolean nflag = arr[i] > 0? true : false;
+            boolean nflag = arr[i] > 0;
             if (flag == nflag) {
                 cnt++;
             } else {
