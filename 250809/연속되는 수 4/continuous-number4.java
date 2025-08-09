@@ -6,8 +6,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        int cnt = 0;
-        int max = 0;
+        int cnt = 1;
+        int max = 1;
         int prev = Integer.parseInt(br.readLine());
         for (int i = 1; i < n; i++) {
             int now = Integer.parseInt(br.readLine());
