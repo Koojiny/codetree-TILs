@@ -22,6 +22,7 @@ public class Main {
 
             move(d, t, a);
         }
+        int lenA = curIdx;
 
         curIdx = 0;
         curNum = 0;
@@ -32,8 +33,10 @@ public class Main {
 
             move(d, t, b);
         }
+        int lenB = curIdx;
 
-        for (int i = 1; i < a.length; i++) {
+        int time = Math.min(lenA, lenB);
+        for (int i = 1; i <= time; i++) {
             if (a[i] == b[i]) {
                 System.out.println(i);
                 return;
