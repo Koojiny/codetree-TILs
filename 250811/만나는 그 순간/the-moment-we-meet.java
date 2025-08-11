@@ -39,17 +39,19 @@ public class Main {
                 return;
             }
         }
+
+        System.out.println(-1);
     }
 
     public static void move(char dir, int t, int[] arr) {
         if (dir == 'L') {
             while (t > 0) {
-                arr[curIdx++] = curNum--;
+                arr[++curIdx] = --curNum;
                 t--;
             }
         } else {
             while (t > 0) {
-                arr[curIdx++] = curNum++;
+                arr[++curIdx] = ++curNum;
                 t--;
             }            
         }
