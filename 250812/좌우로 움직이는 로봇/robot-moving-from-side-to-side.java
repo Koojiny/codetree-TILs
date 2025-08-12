@@ -46,9 +46,12 @@ public class Main {
         }
         int lenB = curTime - 1;
 
+        int totalTime = Math.max(lenA, lenB);
+        for (int t = lenA + 1; t <= totalTime; t++) a[t] = a[lenA];
+        for (int t = lenB + 1; t <= totalTime; t++) b[t] = b[lenB];
+
         int cnt = 0;
-        int time = Math.min(lenA, lenB);
-        for (int i = 1; i <= time; i++) {
+        for (int i = 1; i <= totalTime; i++) {
             if (a[i - 1] != b[i - 1] && a[i] == b[i]) cnt++;
         }
 
