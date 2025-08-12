@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int SIZE = 1000000;
+    public static final int SIZE = 100;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,9 +20,9 @@ public class Main {
 
             while (t-- > 0) {
                 if (d == 'L') {
-                    a[curTime] = a[curTime - 1]--;
+                    a[curTime] = a[curTime - 1] - 1;
                 } else {
-                    a[curTime] = a[curTime - 1]++;
+                    a[curTime] = a[curTime - 1] + 1;
                 }
                 curTime++;
             }
@@ -36,9 +36,9 @@ public class Main {
 
             while (t-- > 0) {
                 if (d == 'L') {
-                    b[curTime] = b[curTime - 1]--;
+                    b[curTime] = b[curTime - 1] - 1;
                 } else {
-                    b[curTime] = b[curTime - 1]++;
+                    b[curTime] = b[curTime - 1] + 1;
                 }
                 curTime++;
             }
