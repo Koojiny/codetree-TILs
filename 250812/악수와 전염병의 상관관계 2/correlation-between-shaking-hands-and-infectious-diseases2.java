@@ -18,7 +18,7 @@ public class Main {
         
         remainSpread = new int[N + 1];
         isInfected = new boolean[N + 1];
-        remainSpread[P] = 2;
+        remainSpread[P] = K;
         isInfected[P] = true;
         
 
@@ -55,13 +55,13 @@ public class Main {
         if (isInfected[x] && remainSpread[x] > 0) {
             if (!isInfected[y]) {
                 isInfected[y] = true;
-                remainSpread[y] = 2;
+                remainSpread[y] = K;
             }
             remainSpread[x]--;
         } else if (isInfected[y] && remainSpread[y] > 0) {
             if (!isInfected[x]) {
                 isInfected[x] = true;
-                remainSpread[x] = 2;
+                remainSpread[x] = K;
             }
             remainSpread[y]--;
         }
