@@ -41,28 +41,19 @@ public class Main {
         int lenB = curIdx;
 
         int time = Math.min(lenA, lenB);
-        int[] first = new int[time + 1];
-        int firstPerson = a[1] > b[1]? 1 : 2;
-        for (int i = 1; i <= time; i++) {
-            if (a[i] > b[i]) {
-                firstPerson = 1;
-                first[i] = firstPerson;
-            } else if (a[i] < b[i]) {
-                firstPerson = 2;
-                first[i] = firstPerson;
-            } else {
-                first[i] = firstPerson;
-            }
-        }
-
+        int leader = 0; // 0 : 없음, 1 : A, 2 : B
         int cnt = 0;
-        for (int i = 2; i < first.length; i++) {
-            if (first[i - 1] != first[i]) cnt++;
+        for (int i = 1; i <= time; i++) {
+            int now;
+            if (a[i] > b[i]) now = 1;
+            else if (a[i] < b[i]) now = 2;
+            else now = leader;
+
+            if (leader != 0 && now != leader) cnt++;
+            
+            leader = now;
         }
 
-        // System.out.println(Arrays.toString(a));
-        // System.out.println(Arrays.toString(b));
-        // System.out.println(Arrays.toString(first));
         System.out.println(cnt);
     }
 }
