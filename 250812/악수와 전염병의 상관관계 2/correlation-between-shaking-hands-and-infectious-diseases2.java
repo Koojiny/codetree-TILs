@@ -52,20 +52,23 @@ public class Main {
     }
 
     public static void shakeHands(int x, int y) {
-        if (isInfected[x] && remainSpread[x] > 0) {
-            if (!isInfected[y]) {
-                isInfected[y] = true;
-                remainSpread[y] = K;
-            }
-            remainSpread[x]--;
+        // 1) 악수 '시작' 시점 기준으로 전파 가능 여부
+        boolean xCan = isInfected[x] && remainSpread[x] > 0;
+        boolean yCan = isInfected[y] && remainSpread[y] > 0;
+        
+        // 2) 감염 전파
+        if (xCan && !isInfected[y]) {
+            isInfected[y] = true;
+            remainSpread[y] = K;
         }
-        if (isInfected[y] && remainSpread[y] > 0) {
-            if (!isInfected[x]) {
-                isInfected[x] = true;
-                remainSpread[x] = K;
-            }
-            remainSpread[y]--;
+        if (yCan && !isInfected[x]) {
+            isInfected[x] = true;
+            remainSpread[x] = K;
         }
+
+        // 3) 시도 소모 (성공/실패와 무관, 스냅샷 기준으로만 차감)
+        if (xCan) remainSpread[x]--;
+        if (yCan) remainSpread[y]--;
     }
 }
 
