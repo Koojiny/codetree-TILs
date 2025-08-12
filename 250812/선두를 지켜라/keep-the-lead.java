@@ -7,7 +7,7 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int max_R = 1000000000;
+        int max_R = 1000000;
         // int max_R = 100;
         int[] a = new int[max_R + 1];
         int[] b = new int[max_R + 1];
