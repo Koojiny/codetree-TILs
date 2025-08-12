@@ -27,6 +27,7 @@ public class Main {
                 curTime++;
             }
         }
+        int lenA = curTime - 1;
 
         curTime = 1;
         for (int i = 0; i < m; i++) {
@@ -43,9 +44,11 @@ public class Main {
                 curTime++;
             }
         }
+        int lenB = curTime - 1;
 
         int cnt = 0;
-        for (int i = 1; i <= curTime; i++) {
+        int time = Math.min(lenA, lenB)l
+        for (int i = 1; i <= time; i++) {
             if (a[i - 1] != b[i - 1] && a[i] == b[i]) cnt++;
         }
 
