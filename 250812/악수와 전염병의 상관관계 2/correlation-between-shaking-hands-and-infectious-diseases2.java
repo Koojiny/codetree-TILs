@@ -58,7 +58,8 @@ public class Main {
                 remainSpread[y] = K;
             }
             remainSpread[x]--;
-        } else if (isInfected[y] && remainSpread[y] > 0) {
+        }
+        if (isInfected[y] && remainSpread[y] > 0) {
             if (!isInfected[x]) {
                 isInfected[x] = true;
                 remainSpread[x] = K;
