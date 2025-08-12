@@ -9,8 +9,8 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int[] a = new int[SIZE];
-        int[] b = new int[SIZE];
+        int[] a = new int[SIZE + 1];
+        int[] b = new int[SIZE + 1];
 
         int curTime = 1;
         for (int i = 0; i < n; i++) {
