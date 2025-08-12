@@ -47,7 +47,7 @@ public class Main {
         int lenB = curTime - 1;
 
         int cnt = 0;
-        int time = Math.min(lenA, lenB)l
+        int time = Math.min(lenA, lenB);
         for (int i = 1; i <= time; i++) {
             if (a[i - 1] != b[i - 1] && a[i] == b[i]) cnt++;
         }
