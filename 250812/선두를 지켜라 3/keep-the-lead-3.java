@@ -7,8 +7,8 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        // int size = 1000000;
-        int size = 30;
+        int size = 1000000;
+        
         int[] a = new int[size + 1];
         int[] b = new int[size + 1];
 
