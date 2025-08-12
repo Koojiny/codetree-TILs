@@ -7,7 +7,7 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
-        int maxSize = 100;
+        int maxSize = 10000;
         char[] line = new char[maxSize + 1];
 
         for (int i = 0; i < n; i++) {
