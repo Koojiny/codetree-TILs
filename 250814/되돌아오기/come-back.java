@@ -30,11 +30,11 @@ public class Main {
                 y = y + dy[dir];
                 time++;
                 
-                if (time > 0 && x == 0 && y == 0) {
-                    ans = time;
-                    break;
-                }
                 // System.out.println(time + " : " + x + ", " + y);
+                if (time > 0 && x == 0 && y == 0) {
+                    System.out.println(time);
+                    return;
+                }
             }
         }
 
