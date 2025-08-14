@@ -6,8 +6,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         int n = Integer.parseInt(br.readLine());
-        int size = 1000;
-        int[][] board = new int[size][size];
+
         int[] dx = {0, 1, 0, -1}; // 동, 남, 서, 북
         int[] dy = {1, 0, -1, 0};
         int dir = 0;
@@ -27,13 +26,14 @@ public class Main {
             else if (cDir == 'N') dir = 3;
 
             while (dist-- > 0) {
-                if (i != 0 && x == 0 && y == 0) {
-                    ans = time;
-                    break;
-                }
                 x = x + dx[dir];
                 y = y + dy[dir];
                 time++;
+                
+                if (time > 0 && x == 0 && y == 0) {
+                    ans = time;
+                    break;
+                }
                 // System.out.println(time + " : " + x + ", " + y);
             }
         }
