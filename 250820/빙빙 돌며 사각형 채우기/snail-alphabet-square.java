@@ -48,7 +48,7 @@ public class Main {
         x = x + dx[dir];
         y = y + dy[dir];
         alphabet += 1;
-        if (alphabet == 'Z') alphabet = 'A';
+        if (alphabet == 'Z' + 1) alphabet = 'A';
 
         if (!inRange(x, y) || arr[x][y] != 0) return;
         
