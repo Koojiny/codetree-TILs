@@ -13,7 +13,7 @@ public class Main {
             house[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(Arrays.toString(house));
+        // System.out.println(Arrays.toString(house));
 
         int min = Integer.MAX_VALUE;
         for (int i = 1; i <= n; i++) {
