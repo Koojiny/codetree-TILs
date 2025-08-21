@@ -13,7 +13,7 @@ public class Main {
             arr[i] = Integer.parseInt(String.valueOf(s.charAt(i)));
         }
 
-        int max = Integer.MIN_VALUE;
+        int max = 0;
         for (int i = 1; i < len; i++) {
             int num = 0;
             arr[i] = 1 - arr[i];
