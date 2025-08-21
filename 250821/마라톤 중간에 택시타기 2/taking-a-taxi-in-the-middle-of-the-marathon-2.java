@@ -19,9 +19,10 @@ public class Main {
         }
 
         int minDis = Integer.MAX_VALUE;
-        int prevIdx = 0;
+        
         for (int i = 1; i < n - 1; i++) { // 1번과 N번을 제외한 체크포인트를 건너뛰게 하는 범위 설정
             int totalDist = 0;
+            int prevIdx = 0;
             // System.out.println("i = " + i);
             for(int j = 0; j < n; j++) { // 한 곳을 제외한 전체 거리 합산
                 if (i == j) continue;
