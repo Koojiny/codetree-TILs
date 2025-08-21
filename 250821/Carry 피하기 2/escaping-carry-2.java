@@ -15,25 +15,32 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        max = 0;
-        boolean flag = false;
+        max = -1;
+        int cnt = 0;
+        int fullCnt = 0;
+        
         for (int i = 0; i < n - 2; i++) {
             for (int j = i + 1; j < n - 1; j++) {
                 for (int k = j + 1; k < n; k++) {
-                    if (carry(arr[i], arr[j], arr[k])) {
+                    fullCnt++;
+                    if (carry(arr[i], arr[j], arr[k])) { // carry 발생한 경우, 합산 후 최대값 비교
                         int sum = arr[i] + arr[j] + arr[k];
+                        // System.out.println(arr[i]+ " " + arr[j]+ " " + arr[k]);
+                        cnt++;
+                        
                         max = Math.max(max, sum);
-                    } else {
-                        flag = true; // 한번이라도 carry가 발생한 경우
+                    } else { // 한번이라도 carry가 발생하지 않은 경우
+                        // System.out.println(arr[i]+ " " + arr[j]+ " " + arr[k]);
+                        // flag = true;
                     }
                 }
             }
         }
-
-        if (flag) {
-            System.out.println(max);
-        } else {
+        // System.out.println("cnt = " + cnt + ", fullcnt = " + fullCnt);
+        if (cnt == fullCnt) {
             System.out.println(-1);
+        } else {
+            System.out.println(max);
         }
         
     }
