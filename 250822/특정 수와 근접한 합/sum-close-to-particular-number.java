@@ -16,23 +16,20 @@ public class Main {
             arr[i] = Integer.parseInt(st.nextToken());
             sum += arr[i];
         }
-        
+
         int diff = Integer.MAX_VALUE;
 
         for (int i = 0; i < n; i++) {
-            int num = sum;
             for (int j = 0; j < n; j++) {
                 // 같은 수를 정한 경우는 건너뜀
                 if (i == j) continue;
                 
                 // 전체 합에서 2개 숫자를 제외한 합을 구함
-                num -= arr[i] + arr[j];
+                int num = sum - arr[i] - arr[j];
 
                 // S와의 차이를 구하고 차이가 diff보다 작다면 diff 초기화
                 int curDiff = Math.abs(s - num);
-                if (curDiff < diff) {
-                    diff = curDiff;
-                }
+                diff = Math.min(diff, curDiff);
             }
         }
 
