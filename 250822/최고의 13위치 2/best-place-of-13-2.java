@@ -30,6 +30,17 @@ public class Main {
             }
         }
 
+        if (N >= 6) { // N이 6보다 큰 경우에는 한 줄에 있는 숫자가 더 클 수도 있음
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j <= N - 6; j++) { // 첫번째 격자
+                    for (int k = j + 3; k <= N - 3; k++) {
+                        int sum = board[i][j] + board[i][j + 1] + board[i][j + 2] + board[i][k] + board[i][k + 1] + board[i][k + 2];
+                        max = Math.max(max, sum);
+                    }
+                }
+            }
+        }
+
         System.out.println(max);
     }
 }
