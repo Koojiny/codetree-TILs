@@ -15,7 +15,7 @@ public class Main {
             int candy = Integer.parseInt(st.nextToken());
             int idx = Integer.parseInt(st.nextToken());
 
-            basket[idx] = candy;
+            basket[idx] += candy;
         }
 
         int max = 0;
