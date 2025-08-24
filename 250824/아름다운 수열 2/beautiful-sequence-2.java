@@ -10,6 +10,7 @@ public class Main {
 
         int[] a = new int[n];
         int[] b = new int[m];
+        int[] temp = new int[n]; // 배열 A 복사할 임시 배열 생성
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -21,29 +22,26 @@ public class Main {
             b[i] = Integer.parseInt(st.nextToken());
         }
 
+        // 임시 배열과 비교를 위해 배열 B 정렬
+        Arrays.sort(b, 0, m);
+
         int answer = 0;
-        for (int i = 0; i <= n - m; i++) { // 수열 A를 모두 돌면서 M개를 모두 비교
-            int cnt = 0;
-            boolean[] visit = new boolean[m];
-            for (int j = i; j < i + m; j++) { // 현재 위치 i에서 M개를 비교
-                int cur = a[j];
-                
-                for (int k = 0; k < m; k++) {
-                    if (cur == b[k] && !visit[k]) {
-                        visit[k] = true;
-                        cnt++;
-                        // System.out.println("i = " + i + ", j = " + j + ", k = " + k + " ");
-                        // System.out.println(Arrays.toString(visit));
-                        break;
-                    }
+        for (int i = 0; i <= n - m; i++) { // 모든 구간의 시작점을 잡는다
+            for (int j = 0; j < m; j++) { // 현재 위치 i에서 M개만큼 복사
+                temp[j] = a[i + j];
+            }
+
+            Arrays.sort(temp, 0, m);
+
+            boolean isSame = true;
+            for (int j = 0; j < m; j++) {
+                if (temp[j] != b[j]) {
+                    isSame = false;
+                    break;
                 }
             }
-            // System.out.println();
 
-            if (cnt == m) {
-                answer++;
-                // System.out.println("정답 카운트 i = " + i);
-            }
+            if (isSame) answer++;
         }
 
         System.out.println(answer);
