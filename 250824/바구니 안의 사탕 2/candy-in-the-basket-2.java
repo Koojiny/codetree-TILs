@@ -17,15 +17,22 @@ public class Main {
 
             basket[idx] += candy;
         }
+        // System.out.println(Arrays.toString(basket));
 
         int max = 0;
-        for (int i = 0 + k; i < basket.length - k; i++) { // 시작 중심점 위치
-            int sum = 0;
-            for (int j = i - k; j <= i + k; j++) { // c - K 부터 c + K 까지만큼 합산
-                sum += basket[j];
-            }
+        if (k <= 50) {
+            for (int i = 0 + k; i < basket.length - k; i++) { // 시작 중심점 위치
+                int sum = 0;
+                for (int j = i - k; j <= i + k; j++) { // c - K 부터 c + K 까지만큼 합산
+                    sum += basket[j];
+                }
 
-            max = Math.max(max, sum);
+                max = Math.max(max, sum);
+            }
+        } else {
+            for (int i = 0; i < basket.length; i++) {
+                max += basket[i];
+            }
         }
 
         System.out.println(max);
